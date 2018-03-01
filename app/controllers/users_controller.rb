@@ -3,7 +3,13 @@ before_action only:[:show] do
   if !logged_in?
     redirect_to login_path
   end
-end
+ end
+ before_action only:[:new] do
+   if logged_in?
+     redirect_to user_path
+   end
+  end
+
   def index
   end
   def new
@@ -22,8 +28,5 @@ end
 
   def destroy
   end
-  # def map
-  #   @user= User.all
-  #     render json: @user
-  # end
+
 end
