@@ -22,4 +22,8 @@ end
 
   def destroy
   end
+  # def map
+  #   @user= User.all
+  #     render json: @user
+  # end
 end

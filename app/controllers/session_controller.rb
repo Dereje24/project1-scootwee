@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  before_action  do
+  before_action only: [:new ,:create] do
       if logged_in?
       redirect_to user_path
     end
@@ -21,7 +21,7 @@ class SessionController < ApplicationController
   def destroy
     reset_session
       @current_user = nil
-    redirect_to root_path
+    redirect_to login_path
   end
   private def params_login
     params.permit(:email,:password)
