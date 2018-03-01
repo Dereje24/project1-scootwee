@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/contact_us', to: 'home#create'
   post '/sign_up', to: 'users#create'
   post '/login', to: 'session#create'
+  get '/logout', to: 'session#destroy' , as:'logout'
+  # get '/user/map', to: 'users#map'
 end
 
 #practicing github
