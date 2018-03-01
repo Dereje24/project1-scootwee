@@ -11,3 +11,5 @@ Rails.application.routes.draw do
   post '/sign_up', to: 'user#create'
   post '/login', to: 'session#create'
 end
+
+#practicing github
