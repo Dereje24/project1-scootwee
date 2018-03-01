@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action do
+before_action only:[:show] do
   if !logged_in?
     redirect_to login_path
   end
