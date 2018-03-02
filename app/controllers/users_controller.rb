@@ -12,6 +12,7 @@ before_action only:[:show] do
 
   def index
   end
+  
   def new
     @user = User.new
   end
@@ -21,12 +22,20 @@ before_action only:[:show] do
   end
 
   def create
+    @user = User.create(user_params)
+    redirect_to login_path
   end
 
   def edit
   end
 
   def destroy
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
 
 end
