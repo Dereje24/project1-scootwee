@@ -20,13 +20,19 @@ before_action only:[:show] do
 
   end
 
-  def create
-  end
+
 
   def edit
   end
 
   def destroy
+  end
+  def map
+    @user = User.all
+    puts 'this call has been made by AJAX'
+
+    render json: {status: 'SUCCESS' , data: @user}, status: :ok
+
   end
 
 end
