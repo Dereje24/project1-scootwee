@@ -21,15 +21,26 @@ before_action only:[:show] do
 
   end
 
+<<<<<<< HEAD
   def create
     @user = User.create(user_params)
     redirect_to login_path
   end
+=======
+
+>>>>>>> map2
 
   def edit
   end
 
   def destroy
+  end
+  def map
+    @user = User.all
+    puts 'this call has been made by AJAX'
+
+    render json: {status: 'SUCCESS' , data: @user}, status: :ok
+
   end
 
   private
