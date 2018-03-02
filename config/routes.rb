@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/user', to: 'users#show', as: 'user'
 
   post '/contact_us', to: 'home#create'
-  post '/sign_up', to: 'users#create'
+  post '/sign_up', to: 'users#create' , as: 'users'
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy' , as:'logout'
   get '/map' , to: 'users#map'

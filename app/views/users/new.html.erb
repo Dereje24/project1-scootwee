@@ -1,62 +1,28 @@
-<h1>Sign Up</h1>
-
-
-
-<%= form_for :user do |l| %>
-<div class='login'>
+<h1>Users#new</h1>
+<%= form_with model:@user , id:'signup' do |f|%>
   <div>
-    <%= l.label :email %>
-    <br>
-    <%= l.text_field :email, placeholder: "Email" %>
-  </div>
-
-  <div>
-    <%= l.label :password %>
-    <br>
-    <%= l.password_field :password, placeholder: "Password" %>
-
-    <br>
-
-      <%= l.submit "Login" %>
-  </div>
-
-  <% end %>
-
-</div>
-
-<br>
-<br>
-<br>
-
-<%= form_for :user do |f| %>
- <div class= 'signup'>
-  <div class= 'fields'>
     <%= f.label :first_name %>
     <br>
     <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
-  
-  <div class= 'fields'>
+  <div>
     <%= f.label :last_name %>
     <br>
     <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div>
-  
-  <div class= 'fields'>
+  <div>
     <%= f.label :email %>
     <br>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
-  
-  <div class= 'fields'>
+  <div>
     <%= f.label :password %>
     <br>
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
-  <br> 
-
-  <%= f.submit "Sign Up" %>
-</div>
+<%= f.hidden_field :lat%>
+<%= f.hidden_field :lng%>
+  <%= f.submit "Sign Up"  %>
 <% end %>
-
 <p>Find me in app/views/users/new.html.erb</p>
+
