@@ -21,7 +21,7 @@ before_action only:[:show] do
 
   end
 
-<<<<<<< HEAD
+
 
   def create
    @user=User.find_by(email:user_params[:email])
@@ -34,7 +34,7 @@ before_action only:[:show] do
     end
   end
 
-=======
+
   def create
     @user = User.new({first_name:user_params[:first_name],last_name:user_params[:last_name],email:user_params[:email],password:user_params[:password]})
     if(@user.save)
@@ -42,7 +42,7 @@ before_action only:[:show] do
     redirect_to user_path
   end
   end
->>>>>>> bb307ee6c5c8d264f7696258b0f463cbb792397e
+
 
   def edit
   end
