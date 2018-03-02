@@ -11,7 +11,7 @@ class SessionController < ApplicationController
   def create
   @user=User.find_by(email:params_login[:email])
     if(@user && @user.authenticate(params_login[:password]))
-      login(@user)
+      login(@user,params_login[:lat],params_login[:lng])
       redirect_to user_path
     else
       flash[:error]="Wrong Combination of Username and Password"
@@ -24,6 +24,6 @@ class SessionController < ApplicationController
     redirect_to login_path
   end
   private def params_login
-    params.permit(:email,:password)
+    params.permit(:email,:password,:lat,:lng)
   end
 end
