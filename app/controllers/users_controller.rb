@@ -21,20 +21,25 @@ before_action only:[:show] do
 
   end
 
-<<<<<<< HEAD
-  def create
-    @user = User.create(user_params)
-    redirect_to login_path
-  end
-=======
 
->>>>>>> map2
+  def create
+   @user=User.find_by(email:user_params[:email])
+    if(@user && @user.authenticate(user_params[:password]))
+      login(@user)
+      redirect_to user_path
+    else
+      flash[:error]="Please sign up"
+      redirect_to sign_up_path
+    end
+  end
+
 
   def edit
   end
 
   def destroy
   end
+  
   def map
     @user = User.all
     puts 'this call has been made by AJAX'
