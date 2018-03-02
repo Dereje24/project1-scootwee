@@ -2,35 +2,36 @@
 
 
 
-<%= form_for :user do |f| %>
+<%= form_with model:@user , id:'signup' do |f|%>
   <div>
     <%= f.label :first_name %>
     <br>
     <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
-  
+
   <div>
     <%= f.label :last_name %>
     <br>
     <%= f.text_field :last_name, placeholder: "Last Name" %>
   </div>
-  
+
   <div>
     <%= f.label :email %>
     <br>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
-  
+
   <div>
     <%= f.label :password %>
     <br>
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
-  
- 
+<%= f.hidden_field :lat%>
+<%= f.hidden_field :lng%>
 
 
-  <%= f.submit "Sign Up" %>
+
+  <%= f.submit "Sign Up"  %>
 
 <% end %>
 
