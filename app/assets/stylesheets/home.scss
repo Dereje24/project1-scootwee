@@ -84,5 +84,129 @@ p {
 
 .section-white {
 	background: #fff;
-	padding: 70px 0;
+	padding: 30px 0;
+}
+.about-box {
+	margin-top: 20px;
+	text-align: center;
+}
+.about-box i{
+	font-size: 58px;
+	margin-bottom: 0;
+	color:#4285f4;
+	display: inline-block;
+	line-height: 90px;
+	cursor: pointer;
+	border-radius: 50%;
+	width: 90px;
+	height: 90px;
+}
+.how-to-use{
+	width: 100%;
+	height: 300px;
+}
+.mid-icon{
+	background-color: black;
+}
+.mid-sign-up{
+	padding: 2% 39%;
+}
+.team-box{
+	position: relative;
+	overflow: hidden;
+	margin: 30px 0;
+}
+
+.team-box .team-text {
+	position: absolute;
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #000;
+    background: #f5f5f5;
+    transform: translateY(100%);
+    transition: transform .50s ease-out;
+}
+
+.team-text h5{
+	margin: 0;
+    padding: 10px 0 14px 0;
+    font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	background: #f5f5f5;
+    transform: translateY( calc(-99%) ); /* +10px overlay padding */
+    transition: transform .50s ease-out;
+}
+
+.text-blue{
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+	color: #4285f4;
+}
+
+.price-box-white{
+	text-align: center;
+	border: 2px solid #f8f8f8;
+	padding: 50px 0;
+	width: 90%;
+	margin-top:30;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.price-box-grey{
+	text-align: center;
+	background: #f8f8f8;
+	border: 2px solid #f8f8f8;
+	padding: 50px 0;
+	width: 90%;
+	margin-top:30;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.price-box-blue{
+	text-align: center;
+	background: #4285f4;
+	border: 2px solid #4285f4;
+	padding: 50px 0;
+	color:#fff;
+	width: 90%;
+	margin-top:30;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+#contact-form{
+	margin:0 auto;
+	width:100%;
+	max-width:960px;
+	text-align:center;
+	margin-bottom:10px;
+}
+textarea{
+	height:205px;
+	margin-bottom:20px;
+	width:100%;
+    padding-left:2%;
+    padding-right:2%;
+    padding-top:10px;
+    padding-bottom:10px;
+	color: #aaa;
+	border: 1px solid #757575;
+	background-color: transparent;
+    font-size:14px;
+    border-radius: 5px 5px 5px 5px;
+}
+p.contact_success_box{
+	display:inline-block;
+	color:#fff;
+	font-size:20px;
+	font-style:italic;
+	padding:20px 20px;
+	border:1px solid #fff;
+    border-radius: 5px 5px 5px 5px;
 }

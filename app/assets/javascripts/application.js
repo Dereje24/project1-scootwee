@@ -16,8 +16,8 @@
 //= require jquery_ujs
 //= require bootstrap.min
 
-$(document).on('ready',function(){
-  alert('bbb');
+// $(document).on('ready',function(){
+//   alert('bbb');
 $('button#ok').on('click',function(e){
   console.log('save button clicked!');
     alert('aaaa');
