@@ -35,9 +35,9 @@ before_action only:[:show] do
   def destroy
   end
   def map
-  @positions=  ActiveRecord::Base.connection.execute("SELECT *,(((acos(sin((#{session['lat'].to_f} * pi()/180)) *
-            sin((CAST(lat AS DOUBLE PRECISION) * pi()/180))+cos((#{session['lat'].to_f} * pi()/180)) *
-            cos((CAST(lat AS DOUBLE PRECISION) *pi()/180)) * cos(((#{session['lng'].to_f} - CAST(lng AS DOUBLE PRECISION))*
+  @positions=  ActiveRecord::Base.connection.execute("SELECT *,(((acos(sin((#{cookies['lat'].to_f} * pi()/180)) *
+            sin((CAST(lat AS DOUBLE PRECISION) * pi()/180))+cos((#{cookies['lat'].to_f} * pi()/180)) *
+            cos((CAST(lat AS DOUBLE PRECISION) *pi()/180)) * cos(((#{cookies['lng'].to_f} - CAST(lng AS DOUBLE PRECISION))*
             pi()/180))))*180/pi())*60*1.1515
         ) as distance FROM locals ORDER BY distance ASC limit 15")
 
