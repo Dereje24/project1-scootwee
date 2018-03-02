@@ -476,7 +476,7 @@ iframe {
 /* ========================================================== */
 
 .home-section {
-	background: #008aff; /* For browsers that do not support gradients */
+	background: url('./images/golden-gate-bridge');
   	background: -webkit-linear-gradient(left top, #008aff, #1ad2fd); /* For Safari 5.1 to 6.0 */
   	background: -o-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Opera 11.1 to 12.0 */
   	background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Firefox 3.6 to 15 */
@@ -504,7 +504,7 @@ iframe {
 .btn-white {
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 30px;
 	line-height: 22px;
 	border: 2px solid #fff;
 	border-radius: 5px 5px;

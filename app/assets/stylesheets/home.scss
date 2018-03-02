@@ -3,12 +3,87 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-h1{
-	text-align: center;
-	color: red;
+ul, ol { 
+	list-style: none; 
+	list-style-image: none; 
+	margin: 0; 
+	padding: 0;
+	color:#858585;
+	font-size: 14px;
+	line-height:24px;
+	margin-bottom:20px;
+}
+	
+ul li, ol li{
+	font-size: 14px;
+	line-height: 28px;
 }
 
-.header-container{
-	background: url('https://i.redd.it/vnq95bck07uy.png');
-	height: 500px;
+ul li i{
+	vertical-align: middle;
+}
+p {
+	font-size: 15px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #7c8595;
+	margin-bottom:15px;
+}
+.home-section {
+	background: url('http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/landmark-images/golden-gate_web.jpg');
+  	// background: -webkit-linear-gradient(left top, #008aff, #1ad2fd); /* For Safari 5.1 to 6.0 */
+  	// background: -o-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Opera 11.1 to 12.0 */
+  	// background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Firefox 3.6 to 15 */
+  	// background: linear-gradient(to bottom right, #008aff, #1ad2fd); /* Standard syntax */
+  	padding: 145px 0 125px 0;
+}
+
+.home-section h1{
+	font-size: 36px;
+	line-height: 44px;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 1px;
+	display: inline-block;
+}
+
+.home-section p{
+	font-size: 19px;
+	line-height: 28px;
+	font-weight: 400;
+	color: #fff;
+	margin-bottom: 30px;
+}
+
+.btn-white {
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	border: 2px solid #fff;
+	border-radius: 5px 5px;
+	padding: 15px 30px;
+	display: inline-block;
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+}
+.btn-white:hover{
+	color: #008aff;
+	background: #fff;
+	border: 2px solid #fff;
+}
+.frame-border{
+	margin-top:10px;
+	border:1px solid rgba(0, 0, 0, 0.40);
+    border-radius: 5px 5px 5px 5px;
+    vertical-align: right;
+}
+.section-grey{
+	background: #f2f7f8;
+	padding: 5px 0;
+}
+
+.section-white {
+	background: #fff;
+	padding: 70px 0;
 }
