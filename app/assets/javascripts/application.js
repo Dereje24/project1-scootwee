@@ -133,10 +133,4 @@ $(document).on('turbolinks:load',function(){
 
 }
 
-  // $(document).on('ready',function(){
-  //   alert('bbb');
-  $('button#ok').on('click',function(e){
-    console.log('save button clicked!');
-      alert('aaaa');
-});
 });
