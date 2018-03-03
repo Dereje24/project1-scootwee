@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+
+		<!-- Meta -->
+		<meta charset="UTF-8">
+		<title>ScootWee | Documentation</title>
+		<meta name="keywords" content="Startapp, Documentation">
+		<meta name="description" content="Startapp - Documentation">
+		<meta name="author" content="demo">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="assets/favicon.png">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/reset.css">
+		<link rel="stylesheet" href="assets/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/shCore.css">
+		<link rel="stylesheet" href="assets/shThemeDefault.css">
+		<link rel="stylesheet" href="assets/style.css">
+
+	</head>
+	<body>
+		<!-- Header -->
+		<div id="header">
+			<h1>ScootWee - Documentation</h1>
+		</div>
+
+		<!-- Menu -->
+		<div id="doc-menu">
+			<ul class="nav">
+				<li class="section active"><span>1</span><a href="#s1">Introduction</a></li>
+				<li class="section"><span>2</span><a href="#s2">HTML Structure</a></li>
+				<li class="section"><span>3</span><a href="#s3">CSS Structure</a></li>
+				<li class="section"><span>4</span><a href="#s4">JavaScripts/Gems</a></li>
+				<li class="section"><span>5</span><a href="#s5">Versioning/Features</a></li>
+				<li class="section"><span>6</span><a href="#s6">Legal Notices</a></li>
+			</ul>
+		</div>
+
+		<!-- Content -->
+		<div id="doc-content" data-spy="scroll" data-target="#menu">
+
+			<div id="intro">
+				<div class="vertical">
+					<h1><strong>ScootWee - Documentation</strong></h1>
+				</div>
+			</div>
+
+<!-- ===================================================================================-->
+<!-- 1 Introduction-->
+<!-- ===================================================================================-->
+
+			<h1 id="s1"><span>1</span>Introduction</h1>
+
+			<p>ScooterWee Site and Documentation file adapted for use, <br>under license by Bogdan Preda</p>
+
+<!-- ===================================================================================-->
+<!-- 2 HTML Structure-->
+<!-- ===================================================================================-->
+
+			<h1 id="s2"><span>2</span>HTML Structure</h1>
+
+			<p><b>Header Section</b><br>Logo and navigation are located in the upper zone, within the "header" section.</p>
+
+<!-- Code ==============================================================================-->
+<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+
+<!--begin header -->
+    <header class="header">
+
+        <!--begin nav -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <!--begin container -->
+            <div class="container">
+
+                <!--begin navbar -->
+                <div class="navbar-header">
+
+                    <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!--logo -->
+                    <a href="index.html" class="navbar-brand" id="logo">ScooterWee</a>
+
+                </div>
+
+                <div id="navbar-collapse-02" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home_wrapper">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#discover" class="discover-btn">Check it out!</a></li>
+
+                    </ul>
+                </div>
+                <!--end navbar -->
+
+            </div>
+            <!--end container -->
+
+        </nav>
+        <!--end nav -->
+
+    </header>
+    <!--end header -->
+
+]]></script>
+<!--====================================================================================-->
+
+			<p><b>Footer Section</b></p>
+
+<!-- Code ==============================================================================-->
+<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+
+<!--begin footer -->
+<div class="footer">
+
+        <!--begin container -->
+        <div class="container">
+
+            <!--begin row -->
+            <div class="row">
+
+                <!--begin col-md-12 -->
+                <div class="col-md-12 text-center">
+
+                    <!--begin copyright -->
+                    <div class="copyright">
+                        <p>Site Theme adapted by ScootWee, under use license from Copyright © 2017 Focus. Designed by Bogdan Preda</p>
+
+                    </div>
+                    <!--end copyright -->
+
+                    <!--begin footer_social -->
+                    <ul class="footer_social">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-skype"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dribble"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end footer_social -->
+
+                </div>
+                <!--end col-md-6 -->
+
+            </div>
+            <!--end row -->
+
+        </div>
+        <!--end container -->
+
+    </div>
+<!--end footer -->
+
+]]></script>
+<!--====================================================================================-->
+
+			<p><b>Newsletter and contact forms.</b><br>Below you can see how the code for the newsletter, register and contact forms sections looks inside the <i>index.html</i> file:</p>
+
+<!-- Code ==============================================================================-->
+<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+
+<!--begin newsletter_form_wrapper -->
+<section class="section-gradient">
+
+    <!--begin container -->
+    <div class="container">
+
+        <!--begin row -->
+        <div class="row">
+
+            <!--begin col md 12 -->
+            <div class="col-md-12 text-center">
+
+                <!--begin newsletter-form -->
+                <h3 class="newsletter-title">Seen enough? We are currently in the closed beta.<br>
+                Please enter your email to join the waiting list.</h3>
+
+            </div>
+            <!--end col md 12 -->
+
+            <!--begin col md 6-->
+            <div class="col-md-6 col-md-offset-3 newsletter_box">
+
+                <!--begin success_box -->
+                <p class="newsletter_success_box" style="display:none;">We received your message and you will hear from us soon. Thank You!</p>
+                <!--end success_box -->
+
+                <form id="newsletter-form" class="newsletter_form" action="php/newsletter.php" method="post">
+                    <input type="email" name="nf_email" placeholder="Enter Your Email.." class="newsletter-input">
+                    <input type="submit" value="SUBSCRIBE" class="btn-newsletter">
+                </form>
+                <!--end newsletter-form -->
+
+            </div>
+            <!--end col md 8 -->
+
+        </div>
+        <!--end row -->
+
+    </div>
+    <!--end container -->
+
+</section>
+<!--end newsletter_form_wrapper -->
+
+]]></script>
+<!--====================================================================================-->
+
+<!-- Code ==============================================================================-->
+<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+
+<!--begin contact -->
+    <section class="section-dark" id="contact">
+
+        <!--begin container-->
+        <div class="container">
+
+            <!--begin row-->
+            <div class="row">
+
+                <!--begin col md 10 -->
+                <div class="col-md-10 col-md-offset-1 text-center margin-bottom-30">
+
+                    <h2 class="section-title grey">Get In Touch</h2>
+
+                    <p class="section-subtitle grey">Happy to help in any way!</p>
+
+                </div>
+            <!--end col md 10 -->
+
+        </div>
+            <!--end row-->
+
+            <!--begin row-->
+        <div class="row margin-20">
+
+                <!--begin success message -->
+                <p class="contact_success_box" style="display:none;">We received your message and you will hear from us soon. Thank You!</p>
+                <!--end success message -->
+
+                <!--begin contact form -->
+                <form id="contact-form" class="contact" action="php/contact.php" method="post">
+
+                    <!--begin col-md-6-->
+                    <div class="col-md-6">
+                        <input class="contact-input white-input" required="" name="contact_names" placeholder="Full Name*" type="text">
+                        <input class="contact-input white-input" required="" name="contact_email" placeholder="Email Adress*" type="email">
+                        <input class="contact-input white-input" required="" name="contact_phone" placeholder="Phone Number*" type="text">
+                    </div>
+                    <!--end col-md-6-->
+
+                    <!--begin col-md-6-->
+                    <div class="col-md-6">
+                        <textarea class="contact-commnent white-input" rows="2" cols="20" name="contact_message" placeholder="Your Message..."></textarea>
+                    </div>
+                    <!--end col-md-6-->
+
+                    <!--begin col-md-12-->
+                    <div class="col-md-12">
+                        <input value="Send Message" id="submit-button" class="contact-submit" type="submit">
+                    </div>
+                    <!--end col-md-12-->
+
+                </form>
+                <!--end contact form -->
+
+            </div>
+            <!--end row-->
+
+      </div>
+      <!--end container-->
+
+    </section>
+    <!--end contact-->
+
+]]></script>
+<!--====================================================================================-->
+
+<p>This template includes as well 3 PHP files, called <b>newsletter.php</b>, <b>register.php</b> and <b>contact.php</b>. For your newsletter, register and contact forms to function correctly youʼll have to open the newsletter.php, register.php and contact.php files and enter in your email address in the following location:</p>
+
+<!-- Code ==============================================================================-->
+<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+$to ='to@email.com';
+]]></script>
+<!-- ===================================================================================-->
+<!-- 3 CSS Structure-->
+<!-- ===================================================================================-->
+		<h1 id="s3"><span>3</span>CSS Structure</h1>
+			<p>This template includes 5 css files. Here is a list of the stylesheet files:</p>
+
+      <ul>
+            	<li><b>bootstrap.css</b>  - standard bootstrap css styles.</li>
+				<li><b>style.css</b>  - common css styles for this template.</li>
+                <li><b>style-magnific-popup</b> - contain css styles for the lightbox gallery.</li>
+                <li><b>animate.css</b>- a cross-browser library of CSS animations</li>
+                <li><b>fonts.css</b> - base styles for the Fontastic icon fonts.</li>
+			</ul>
+
+<!-- Code ==============================================================================-->
+		<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+		<!-- Loading Bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+
+		<!-- Loading Template CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/style-magnific-popup.css" rel="stylesheet">
+
+		<!-- Font Awesome -->
+		<link href="css/fonts.css" rel="stylesheet">
+		]]></script>
+
+
+<!--====================================================================================-->
+			<p>Fonts Used</p>
+
+			<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+			<!-- Google Fonts -->
+
+			<link href=“https://fonts.googleapis.com/css?family=Courgette” rel=“stylesheet”>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+			]]></script>
+
+			<!-- Code ==============================================================================-->
+			<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+			html {
+				font-family: ‘Courgette’, cursive;
+			}
+			]]></script>
+<!-- ===================================================================================-->
+<!-- 4 JavaScripts and Gems-->
+<!-- ===================================================================================-->
+		<h1 id="s4"><span>4</span>JavaScripts and Gems Used in Application</h1>
+			<p>This template imports Javascript files. jQuery is a Javascript library that greatly reduces the amount of <br>
+			code that you must write. All the Javascript files can be found inside the js folder.</p>
+			<p>Gems utilized in the making of this application:</p>
+					<ul>
+							<li>Bcrypt</li>
+							<li>GeoLocation</li>
+							<li>something</li>
+							<li>something else</li>
+					</ul>
+
+<!-- ===================================================================================-->
+<!-- 5 Additional Info - Team Creators
+ -->
+<!-- ===================================================================================-->
+		<h1><underline>ScooterWee Dev Team</underline></h1>
+			<ul>
+				<li>DJ</li>
+				<li>Abdehalim</li>
+				<li>Terrell</li>
+				<li>Lisa</li>
+			</ul>
+
+<!-- ===================================================================================-->
+<!-- 6 Versioning - Change Log -->
+<!-- ===================================================================================-->
+<div>
+			<h1 id="s6"><span>6</span>Versioning and Features</h1>
+      <ul>
+				<li><b>Version 1.0</b> - Initial software release</li>
+				<li><b>Future Features</li>
+						<li>something</li>
+						<li>something else</li>
+			</ul>
+</div>
+<!-- ===================================================================================-->
+<!-- 7 Legal - Terms & Conditions for Use -->
+<!-- ===================================================================================-->
+			<div>
+						<h1 id="s6"><span>6</span>Legal and T&C</h1>
+			      <ul>
+							<li>Terms and Conditions</li>
+							<li>Waiver and Release of Liability</li>
+							<li>Privacy Policy/Cookies</li>
+						</ul>
+			</div>
+
+<!-- ===================================================================================-->
+<!-- Extra -->
+<!-- ===================================================================================-->
+
+<p>WAIVER AND RELEASE OF LIABILITY
+In consideration of the risk of injury while participating in (the "Activity"), and as consideration for the right to participate in the Activity, I hereby, for myself, my heirs, executors, administrators, assigns, or personal representatives, knowingly and voluntarily enter into this waiver and release of liability and hereby waive any and all rights, claims or causes of action of any kind whatsoever arising out of my participation in the Activity, and do hereby release and forever discharge , located at 225 Bush Street, SF, their affiliates, managers, members, agents, attorneys, staff, volunteers, heirs, representatives, predecessors, successors and assigns, for any physical or psychological injury, including but not limited to illness, paralysis, death, damages, economical or emotional loss, that I may suffer as a direct result of my participation in the aforementioned Activity, including traveling to and from an event related to this Activity.
+
+I AM VOLUNTARILY PARTICIPATING IN THE AFOREMENTIONED ACTIVITY AND I AM PARTICIPATING IN THE ACTIVITY ENTIRELY AT MY OWN RISK. I AM AWARE OF THE RISKS ASSOCIATED WITH TRAVELING TO AND FROM AS WELL AS PARTICIPATING IN THIS ACTIVITY, WHICH MAY INCLUDE, BUT ARE NOT LIMITED TO, PHYSICAL OR PSYCHOLOGICAL INJURY, PAIN, SUFFERING, ILLNESS, DISFIGUREMENT, TEMPORARY OR PERMANENT DISABILITY (INCLUDING PARALYSIS), ECONOMIC OR EMOTIONAL LOSS, AND DEATH. I UNDERSTAND THAT THESE INJURIES OR OUTCOMES MAY ARISE FROM MY OWN OR OTHERS' NEGLIGENCE, CONDITIONS RELATED TO TRAVEL, OR THE CONDITION OF THE ACTIVITY LOCATION(S). NONETHELESS, I ASSUME ALL RELATED RISKS, BOTH KNOWN OR UNKNOWN TO ME, OF MY PARTICIPATION IN THIS ACTIVITY, INCLUDING TRAVEL TO, FROM AND DURING THIS ACTIVITY.
+
+I agree to indemnify and hold harmless against any and all claims, suits or actions of any kind whatsoever for liability, damages, compensation or otherwise brought by me or anyone on my behalf, including attorney's fees and any related costs, if litigation arises pursuant to any claims made by me or by anyone else acting on my behalf. If incurs any of these types of expenses, I agree to reimburse .
+
+I acknowledge that ScooterWee and their directors, officers, volunteers, representatives and agents are not responsible for errors, omissions, acts or failures to act of any party or entity conducting a specific event or activity on behalf of the user/renter.
+
+I ACKNOWLEDGE THAT THIS ACTIVITY MAY INVOLVE A TEST OF A PERSON'S PHYSICAL AND MENTAL LIMITS AND MAY CARRY WITH IT THE POTENTIAL FOR DEATH, SERIOUS INJURY, AND PROPERTY LOSS. The risks may include, but are not limited to, those caused by terrain, facilities, temperature, weather, lack of hydration, condition of participants, equipment, vehicular traffic and actions of others, including but not limited to, participants, volunteers, spectators, coaches, event officials and event monitors, and/or producers of the event.
+
+I ACKNOWLEDGE THAT I HAVE CAREFULLY READ THIS "WAIVER AND RELEASE" AND FULLY UNDERSTAND THAT IT IS A RELEASE OF LIABILITY. I EXPRESSLY AGREE TO RELEASE AND DISCHARGE AND ALL OF ITS AFFILIATES, MANAGERS, MEMBERS, AGENTS, ATTORNEYS, STAFF, VOLUNTEERS, HEIRS, REPRESENTATIVES, PREDECESSORS, SUCCESSORS AND ASSIGNS, FROM ANY AND ALL CLAIMS OR CAUSES OF ACTION AND I AGREE TO VOLUNTARILY GIVE UP OR WAIVE ANY RIGHT THAT I OTHERWISE HAVE TO BRING A LEGAL ACTION AGAINST FOR PERSONAL INJURY OR PROPERTY DAMAGE.
+To the extent that statute or case law does not prohibit releases for negligence, this release is also for negligence on the part of , its agents, and employees.
+In the event that I should require medical care or treatment, I agree to be financially responsible for any costs incurred as a result of such treatment. I am aware and understand that I should carry my own health insurance.
+
+In the event that any damage to equipment or facilities occurs as a result of my or my family's willful actions, neglect or recklessness, I acknowledge and agree to be held liable for any and all costs associated with any actions of neglect or recklessness.</p>
+
+
+
+
+</div>
+
+		<!-- JavaScripts -->
+		<script type='text/javascript' src='assets/jquery.min.js'></script>
+		<script type='text/javascript' src='assets/bootstrap.min.js'></script>
+		<script type='text/javascript' src='assets/jquery.scrollTo.min.js'></script>
+		<script type='text/javascript' src='assets/jquery.localscroll-1.2.7-min.js'></script>
+		<script type='text/javascript' src='assets/shCore.js'></script>
+		<script type='text/javascript' src='assets/shBrushPhp.js'></script>
+		<script type='text/javascript' src='assets/shBrushXML.js'></script>
+		<script type='text/javascript' src='assets/shBrushJScript.js'></script>
+		<script type='text/javascript' src='assets/shBrushCss.js'></script>
+		<script type='text/javascript' src='assets/custom.js'></script>
+
+	</body>
+</html>

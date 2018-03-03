@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<%= form_with mode:@user , id:'login' do |t|%>
+<%= t.label :email , 'Email' %>
+<%= t.text_field :email , placeholder:'Email here' %>
+<%= t.label :password, 'Password' %>
+<%= t.password_field :password , placeholder:'Password' %>
+<%= t.hidden_field :lat %>
+<%= t.hidden_field :lng %>
+<%= t.submit 'Login' %>
+<% end %>

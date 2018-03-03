@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require home.scss
  */
+ p {
+  transition: all 2s;
+ }
+ .bikes{
+   display: none;
+ }
