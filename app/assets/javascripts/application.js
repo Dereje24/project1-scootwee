@@ -74,7 +74,8 @@ $(document).on('turbolinks:load',function(){
         success: function(data){
           map = new google.maps.Map(map_id, {
             center:{lat: parseFloat(lat[1]),lng: parseFloat(lng[1])},
-            zoom:12.5    });
+            zoom:12.5
+          });
           center =new google.maps.Marker({
             position:{lat: parseFloat(lat[1]),lng: parseFloat(lng[1])},
             map:map,
@@ -82,20 +83,25 @@ $(document).on('turbolinks:load',function(){
           });
             directionsDisplay.setMap(map);
           data.data.forEach(function(el,index){
-            var pt = new google.maps.LatLng( el.lat, el.lng);
             console.log(el)
+            var pt = new google.maps.LatLng( el.position.lat, el.position.lng);
+
             bounds.extend(pt);
             // console.log(pt.getLatitude())
             marker=new google.maps.Marker({
               position:pt,
               map:map,
               icon:icon,
-              title:el.name
+              title:el.position.name
             })
             markers.push(marker)
-            list.append(`<p>name: ${el.name} Adress: ${el.street} ${el.city} ${el.state} ${el.zip_code} distance:${Math.round(el.distance)} miles <a class='display_road' data-id=${index}>show</a></p>`)
-          });
-          $('a').on('click',function(e){
+            list.append(`<div id='bike_list${index}' class='locals'><p>name: ${el.position.name} Adress: ${el.position.street} ${el.position.city} ${el.position.state} ${el.position.zip_code} distance:${Math.round(el.position.distance)} miles <a class='display_road' data-id=${index}>show</a> <a class='reserve' data-id=${index}>Reserve</a></p></div>`)
+            bikes=$(`#bike_list${index}`)
+            el.vehicles.forEach(function(vl){
+              bikes.append(`<p class='bikes'><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:100px;height:100px' > ${vl.description} rent it today for 5$</p>`)
+            });
+            });
+          $('a.display_road').on('click',function(e){
             var i=$(this).attr('data-id')
             markers.forEach(function(mk){
               mk.setVisible(true);
@@ -112,6 +118,11 @@ $(document).on('turbolinks:load',function(){
     directionsDisplay.setDirections(result);
     }
     });
+        });
+        $('a.reserve').on('click',function(e){
+          var i=$(this).attr('data-id')
+          $('.bikes').hide(300)
+          $(`#bike_list${i} .bikes`).show(300)
         });
         },
         error: function(data){

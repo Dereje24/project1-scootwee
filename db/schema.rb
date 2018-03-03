@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302063114) do
+ActiveRecord::Schema.define(version: 20180302215202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 20180302063114) do
     t.string "paypal_oauth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "sn"
+    t.integer "value"
+    t.string "description"
+    t.string "picture_url"
+    t.bigint "local_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["local_id"], name: "index_vehicles_on_local_id"
   end
 
 end

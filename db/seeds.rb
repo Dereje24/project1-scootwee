@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Local.delete_all
+Vehicle.delete_all
 position=[37.78317009,-122.38788812,37.77009658,-122.43696013,
 37.78430452,-122.43240438,
 37.79272767,-122.42420559,
@@ -17,6 +18,11 @@ position=[37.78317009,-122.38788812,37.77009658,-122.43696013,
 37.75909595,-122.41999152,
 37.76408153,-122.4464512,
 ]
-10.times do |index|
-Local.create(name: Faker::Name.name ,max: 10, street: Faker::Address.street_address, city: 'San francisco', state:'CA' , zip_code:'94016',lat: position[index],lng:position[index+1])
+20.times do |index|
+if index % 2 == 0
+a=Local.create(name: Faker::Name.name ,max: 10, street: Faker::Address.street_address, city: 'San francisco', state:'CA' , zip_code:'94016',lat: position[index],lng:position[index+1])
+6.times do
+b=a.vehicle.create(sn: Faker::Bitcoin.address , value: Faker::Number.number(3),description:Faker::Name.name)
+end
+end
 end
