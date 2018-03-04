@@ -40,6 +40,9 @@ before_action only:[:show] do
     if(@user.save)
       login(@user,user_params[:lat],user_params[:lng])
     redirect_to user_path
+  else
+    flash[:user_error] =@user.errors.full_messages
+    redirect_to  sign_up_path
   end
   end
 
@@ -56,8 +59,12 @@ before_action only:[:show] do
             cos((CAST(lat AS DOUBLE PRECISION) *pi()/180)) * cos(((#{cookies['lng'].to_f} - CAST(lng AS DOUBLE PRECISION))*
             pi()/180))))*180/pi())*60*1.1515
         ) as distance FROM locals ORDER BY distance ASC limit 15")
-
-    render json: {status: 'SUCCESS' , data: @positions}, status: :ok
+@locals=[]
+@positions.each do |p|
+ @vehicles=Local.find(p['id']).vehicle.all
+ @locals.push({position:p , vehicles:@vehicles})
+end
+    render json: {status: 'SUCCESS' , data: @locals}, status: :ok
 
   end
 
