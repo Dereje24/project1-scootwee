@@ -25,3 +25,6 @@
  #reservation{
    text-align: center;
  }
+ table, tr ,td ,th{
+   border: 0.1em solid black;
+ }

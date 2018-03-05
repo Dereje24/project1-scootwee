@@ -26,17 +26,26 @@ def current
   @local=@current_rental[0].local
 end
 def show
-@rentals=current_user.Rental.where("drop_date != 'nill' ")
+  @history=[]
+@rentals=User.find(session[:user_id]).rental.where("drop_date != 'nill' ")
+@rentals.each do |r|
+  @vehicle=r.vehicle
+  @local_start=@vehicle.local
+  @local_end=Local.find(21)
+  @history.push({rental:r,vehicle:@vehicle,local_start:@local_start,local_end:@local_end})
 
 end
+render json: {status: 'SUCCESS' , data: @history}, status: :ok
+end
+
 def drop
-p params_drop[:local_id]
 @rental=Rental.find(params_drop[:rental_id])
 if @rental.vehicle.update(local_id:params_drop[:local_id])
-  if @rental.update(drop_date:'okay')
+  if @rental.update(drop_date:Date.today.to_time.to_s)
+    @rental.update(local_drop:params_drop[:local_id])
   redirect_to user_path
 else
-  redirect_to root_path
+  redirect_to current_path
 end
 else
 flash[:error]='pick another location this one is full'
