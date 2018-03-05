@@ -29,20 +29,8 @@ end
   end
 
 
-
   def create
-   @user=User.find_by(email:user_params[:email])
-    if(@user && @user.authenticate(user_params[:password]))
-      login(@user)
-      redirect_to user_path
-    else
-      flash[:error]="Please sign up"
-      redirect_to sign_up_path
-    end
-  end
-
-
-  def create
+    
     @user = User.new({first_name:user_params[:first_name],last_name:user_params[:last_name],email:user_params[:email],password:user_params[:password]})
     if(@user.save)
       login(@user,user_params[:lat],user_params[:lng])
