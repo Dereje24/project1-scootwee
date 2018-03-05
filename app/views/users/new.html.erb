@@ -1,29 +1,65 @@
-<h1>Users#new</h1>
+<%= form_with url:user_login_path, id:'login' do |l|%>
 
-<div class='container'>
+
+<div class= 'logo'>
+<%= image_tag "ScootweeLogo.png" %>
+</div>
+
+<div class = 'everything'>
+
+<div class = 'login'>
+  <h1>LOGIN</h1>
+  <div>
+    <%= l.label :email %>
+    <br>
+    <%= l.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= l.label :password %>
+    <br>
+    <%= l.password_field :password, placeholder: "Password" %>
+  </div>
+  <%= l.hidden_field :lat%>
+  <%= l.hidden_field :lng%>
+  <br>
+  <%= l.submit "Login"  %> 
+
+
+  <% end %>
+</div>
+
+<div class= 'line'>
+</div>
+
+
+<div>
 <% if(flash[:user_error]) %>
 <%  flash[:user_error].each do |e|  %>
 <div class='bg-info'><p class='text-danger'><%= e  %></p></div>
 <% end %>
 <% end %>
-<%= form_with model:@user , id:'signup' ,class:'form col-lg-12' do |f|%>
-  <div class='form-group'>
+<%= form_with model:@user , id:'signup' do |f|%>
+  
+  <div class= 'signup'>
+  <h1> SIGN UP </h1>
 
     <%= f.label :first_name %>
     <br>
-    <%= f.text_field :first_name, placeholder: "First Name", class:'form-control' %>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>
 
-  <div class='form-group'>
+  <div>
     <%= f.label :last_name %>
     <br>
-    <%= f.text_field :last_name, placeholder: "Last Name" , class:'form-control' %>
+    <%= f.text_field :last_name, placeholder: "Last Name"   %>
   </div>
+  
   <div>
     <%= f.label :email %>
     <br>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
+  
   <div>
     <%= f.label :password %>
     <br>
@@ -31,9 +67,11 @@
   </div>
 <%= f.hidden_field :lat%>
 <%= f.hidden_field :lng%>
+<br>
   <%= f.submit "Sign Up"  %>
 <% end %>
 <p>Find me in app/views/users/new.html.erb</p>
 
 </div>
+
 

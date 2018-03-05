@@ -15,6 +15,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require bootstrap-datepicker
 var directionsService = new google.maps.DirectionsService
 var directionsDisplay = new google.maps.DirectionsRenderer
 var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",

@@ -2,4 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.logo{
+  text-align: center;
+}
 
+.logsession{
+  margin-top: 10%;
+}
+
+.login{
+  margin-top: 5%;
+}
+
+.line {
+    border-left: 2px solid black;
+    height: 600px;
+}
+
+.signup{
+  margin-top: 19%;
+}
+
+.everything{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+input{
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+}
