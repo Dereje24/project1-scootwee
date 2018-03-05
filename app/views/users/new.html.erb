@@ -1,77 +1,90 @@
+
+<div class='container'>
+  <div class='row'>
+    <div class= 'col-md-6 col-md-offset-3' >
+    <%= image_tag "ScootweeLogo.png",style:'margin-left:5em' %>
+    </div>
+
+  </div>
+    <div class='row'>
+<div class='col-lg-4 col-md-12 col-md-offset-1'>
 <%= form_with url:user_login_path, id:'login' do |l|%>
 
 
-<div class= 'logo'>
-<%= image_tag "ScootweeLogo.png" %>
-</div>
 
-<div class = 'everything'>
+<div class = ''>
 
-<div class = 'login'>
+<div class = ''>
   <h1>LOGIN</h1>
-  <div>
+  <div class='form-group'>
     <%= l.label :email %>
     <br>
-    <%= l.text_field :email, placeholder: "Email" %>
+    <%= l.text_field :email, placeholder: "Email",class:'form-control' %>
   </div>
-  <div>
+  <div class='form-group'>
     <%= l.label :password %>
     <br>
-    <%= l.password_field :password, placeholder: "Password" %>
+    <%= l.password_field :password, placeholder: "Password",class:'form-control' %>
   </div>
   <%= l.hidden_field :lat%>
   <%= l.hidden_field :lng%>
   <br>
-  <%= l.submit "Login"  %> 
+  <%= l.submit "Login" ,class:'form-control btn btn-info' %>
 
 
   <% end %>
 </div>
-
-<div class= 'line'>
 </div>
 
 
-<div>
+</div>
+<div class='line col-md-2 col-md-offset-1 hidden-xs hidden-sm '>
+
+</div>
+<div class='col-lg-4 col-md-12 '>
 <% if(flash[:user_error]) %>
+<div class='alert alert-danger'>
 <%  flash[:user_error].each do |e|  %>
-<div class='bg-info'><p class='text-danger'><%= e  %></p></div>
+
+<p class='text-warning'><%= e  %></p>
+
 <% end %>
+</div>
 <% end %>
 <%= form_with model:@user , id:'signup' do |f|%>
-  
-  <div class= 'signup'>
-  <h1> SIGN UP </h1>
 
+
+  <h1> SIGN UP </h1>
+<div class= 'form-group'>
     <%= f.label :first_name %>
     <br>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+    <%= f.text_field :first_name, placeholder: "First Name" ,class:'form-control'%>
   </div>
 
-  <div>
+  <div class='form-group'>
     <%= f.label :last_name %>
     <br>
-    <%= f.text_field :last_name, placeholder: "Last Name"   %>
+    <%= f.text_field :last_name, placeholder: "Last Name" ,class:'form-control'  %>
   </div>
-  
-  <div>
+
+  <div class='form-group'>
     <%= f.label :email %>
     <br>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.text_field :email, placeholder: "Email" ,class:'form-control'%>
   </div>
-  
-  <div>
+
+  <div class='form-group'>
     <%= f.label :password %>
     <br>
-    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password, placeholder: "Password",class:'form-control' %>
   </div>
 <%= f.hidden_field :lat%>
 <%= f.hidden_field :lng%>
 <br>
-  <%= f.submit "Sign Up"  %>
+  <%= f.submit "Sign Up" ,class:'form-control btn btn-primary' %>
 <% end %>
-<p>Find me in app/views/users/new.html.erb</p>
+
 
 </div>
-
-
+</div>
+<div>

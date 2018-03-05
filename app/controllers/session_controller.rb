@@ -14,7 +14,7 @@ class SessionController < ApplicationController
       login(@user,params_login[:lat],params_login[:lng])
       redirect_to user_path
     else
-      flash[:error]="Wrong Combination of Username and Password"
+      flash[:login_error]="Wrong Combination of Username and Password"
       redirect_to login_path
     end
   end
