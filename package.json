@@ -1,5 +1,7 @@
 {
   "name": "scoot-we",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "owl.carousel": "^2.2.0"
+  }
 }
