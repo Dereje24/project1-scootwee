@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   post '/contact_us', to: 'home#create'
   post '/sign_up', to: 'users#create' , as: 'users'
-  post '/login', to: 'session#create'
+  post '/login', to: 'session#create', as:'user_login'
   get '/logout', to: 'session#destroy' , as:'logout'
   get '/map' , to: 'users#map'
   post '/rent', to: 'rentals#create' , as:'rental'

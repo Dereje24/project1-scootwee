@@ -28,7 +28,9 @@ end
 @user=current
   end
 
+
   def create
+    
     @user = User.new({first_name:user_params[:first_name],last_name:user_params[:last_name],email:user_params[:email],password:user_params[:password]})
     if(@user.save)
       login(@user,user_params[:lat],user_params[:lng])
@@ -39,11 +41,13 @@ end
   end
   end
 
+
   def edit
   end
 
   def destroy
   end
+  
   def map
   @positions=  ActiveRecord::Base.connection.execute("SELECT *,(((acos(sin((#{cookies['lat'].to_f} * pi()/180)) *
             sin((CAST(lat AS DOUBLE PRECISION) * pi()/180))+cos((#{cookies['lat'].to_f} * pi()/180)) *

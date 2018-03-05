@@ -30,8 +30,8 @@ def show
 @rentals=User.find(session[:user_id]).rental.where("drop_date != 'nill' ")
 @rentals.each do |r|
   @vehicle=r.vehicle
-  @local_start=@vehicle.local
-  @local_end=Local.find(r.local_drop)
+  @local_start=r.local
+  @local_end=Local.find_by_id(r.local_drop.to_i)
   @history.push({rental:r,vehicle:@vehicle,local_start:@local_start,local_end:@local_end})
 
 end

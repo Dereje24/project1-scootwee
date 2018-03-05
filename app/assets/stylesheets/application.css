@@ -14,6 +14,7 @@
  *= require_self
  *= require bootstrap.min
  *= require home.scss
+ *= require bootstrap-datepicker
  */
  import 'owl.carousel/dist/assets/owl.carousel.css';
 
