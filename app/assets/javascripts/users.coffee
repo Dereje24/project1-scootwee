@@ -7,6 +7,7 @@ position = position
 marker1 = marker1
 directionsService = new google.maps.DirectionsService
 directionsDisplay = new google.maps.DirectionsRenderer
+
 marker = (lat , lng) ->
   p1= {lat: lat, lng: lng}
   marker=new google.maps.Marker  {

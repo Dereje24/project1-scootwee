@@ -15,5 +15,20 @@ class ApplicationController < ActionController::Base
     cookies[:lng]=session[:lng]
     @current_user ||= User.find_by(id: session[:user_id])
   end
+  def has_reserved?
+    !reserved.nil?
+  end
+
+  def reserved
+  @current=current
+  @rental =@current.rental.where("drop_date = 'nill'")
+  if @rental.count == 0
+    @rental=nil
+    else
+    @rental
+  end
+
+  end
+
 
 end

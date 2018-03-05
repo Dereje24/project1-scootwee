@@ -26,6 +26,7 @@ var map;
 var show;
 var markers=[];
 var center;
+var user_map;
 
 $(document).on('turbolinks:load',function(){
   function get_current_location(){
@@ -58,7 +59,48 @@ $(document).on('turbolinks:load',function(){
      }
 
     }
-
+function reservation_map(){
+var position={lat: parseFloat($('input[name="local_lat"]').val()),lng: parseFloat($('input[name="local_lng"]').val())}
+  map = new google.maps.Map(user_map, {
+    center:position,
+    zoom:12.5
+  });
+  marker=new google.maps.Marker({
+    position:position,
+    map:map,
+    icon:icon,
+    title:'Pickup'
+  });
+  var x=document.cookie.split(';');
+  var lat = x[0].split('=')
+  var lng= x[1].split('=')
+  center =new google.maps.Marker({
+    position:{lat: parseFloat(lat[1]),lng: parseFloat(lng[1])},
+    map:map,
+    title:'Your actual position'
+  });
+  directionsDisplay.setMap(map);
+  marker.addListener('click', function() {
+    center.setVisible(false)
+    marker.setVisible(false)
+    directionsService.route({
+origin: center.getPosition(),
+destination: marker.getPosition(),
+unitSystem: google.maps.DirectionsUnitSystem.METRIC,
+travelMode: google.maps.DirectionsTravelMode.WALKING
+}, function(result, status){
+if (status == google.maps.DirectionsStatus.OK){
+directionsDisplay.setDirections(result);
+}
+});
+  });
+$('#drop').on('click',function(){
+  $('#myModal').modal('show')
+});
+$('#dropit').on('click',function(){
+  $('#drop_form').submit();
+});
+}
   function map(){
     var list=$('#list');
     var bounds = new google.maps.LatLngBounds();
@@ -98,7 +140,7 @@ $(document).on('turbolinks:load',function(){
             list.append(`<div id='bike_list${index}' class='locals'><p>name: ${el.position.name} Adress: ${el.position.street} ${el.position.city} ${el.position.state} ${el.position.zip_code} distance:${Math.round(el.position.distance)} miles <a class='display_road' data-id=${index}>show</a> <a class='reserve' data-id=${index}>Reserve</a></p></div>`)
             bikes=$(`#bike_list${index}`)
             el.vehicles.forEach(function(vl){
-              bikes.append(`<p class='bikes'><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:100px;height:100px' > ${vl.description} rent it today for 5$</p>`)
+              bikes.append(`<p class='bikes'><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:100px;height:100px' > ${vl.description} rent it today for 5$ <a a class='rent' data-id=${el.position.id}#${vl.id}>Pick!</a></p>`)
             });
             });
           $('a.display_road').on('click',function(e){
@@ -124,6 +166,19 @@ $(document).on('turbolinks:load',function(){
           $('.bikes').hide(300)
           $(`#bike_list${i} .bikes`).show(300)
         });
+        $('a.rent').on('click',function(e){
+          var i=$(this).attr('data-id').split('#')
+          $('.info').empty()
+          $('.info').append($(this).parent()[0])
+          $('.info .rent').remove()
+          $('input[name="local_id"]').val(`${i[0]}`)
+          $('input[name="vehicle_id"]').val(`${i[1]}`)
+          $('#myModal').modal('show')
+
+        });
+        $('#reserve').on('click',function(){
+          $('#reservation_form').submit();
+        });
         },
         error: function(data){
           console.log('error')
@@ -135,13 +190,18 @@ $(document).on('turbolinks:load',function(){
   map_id=document.getElementById('map');
   login=document.getElementById('login');
   sign_up=document.getElementById('signup');
+  user_map=document.getElementById('user#map');
+
   if(login ){
   get_current_location();}
   if(sign_up ){
   get_current_location_sign_up();}
   if(map_id){
   map();
-
 }
+if(user_map){
+reservation_map();
+}
+
 
 });
