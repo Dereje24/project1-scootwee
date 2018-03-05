@@ -31,7 +31,7 @@ def show
 @rentals.each do |r|
   @vehicle=r.vehicle
   @local_start=@vehicle.local
-  @local_end=Local.find(21)
+  @local_end=Local.find(r.local_drop)
   @history.push({rental:r,vehicle:@vehicle,local_start:@local_start,local_end:@local_end})
 
 end
