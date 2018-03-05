@@ -22,6 +22,14 @@ ul li, ol li{
 ul li i{
 	vertical-align: middle;
 }
+ul.pricing-list li span{
+	font-family: 'Roboto', sans-serif;
+	font-size: 70px;
+	line-height: 70px;
+	display: block;
+	margin-top:30px;
+	margin-bottom: 20px;
+}
 p {
 	font-size: 15px;
 	line-height: 24px;
@@ -151,11 +159,12 @@ p {
 .price-box-white{
 	text-align: center;
 	border: 2px solid #f8f8f8;
-	padding: 50px 0;
+	padding-top:50px;
 	width: 90%;
 	margin-top:30;
 	margin-bottom: 20px;
 	margin-left: 20px;
+	padding-bottom: 60px;
 }
 
 .price-box-grey{
@@ -179,9 +188,34 @@ p {
 	margin-bottom: 20px;
 	margin-left: 20px;
 }
+.price-title{
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+.price-tag{
+	border: solid;
+	background-color: #337ab7;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+}
+.price-tag:hover{
+	color: white;
+}
+.white-text{ 
+	color: #fff;
+}
 .team-images{
 	width: 262px;
 	height: 334px;
+}
+.gallery img{	
+	border: groove;
+	height: 500px;
+	width: 350px;	
 }
 
 #contact-form{
@@ -212,5 +246,17 @@ p.contact_success_box{
 	font-style:italic;
 	padding:20px 20px;
 	border:1px solid #fff;
+    border-radius: 5px 5px 5px 5px;
+}
+input.contact-input{
+	width:100%;
+	height:55px;
+    padding-left:2%;
+    padding-right:2%;
+	margin-bottom:20px;
+	color: #aaa;
+	border: 1px solid #757575;
+	background-color: transparent;
+    font-size:14px;
     border-radius: 5px 5px 5px 5px;
 }
