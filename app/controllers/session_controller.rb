@@ -20,7 +20,7 @@ class SessionController < ApplicationController
   end
   def destroy
     reset_session
-      @current_user = nil
+    current=nil
     redirect_to login_path
   end
   private def params_login

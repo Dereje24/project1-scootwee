@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy' , as:'logout'
   get '/map' , to: 'users#map'
+  post '/rent', to: 'rentals#create' , as:'rental'
+  get 'user/reservation', to: 'rentals#current', as:'current'
+  post '/drop' , to:'rentals#drop' , as: 'drop'
+  get '/user/history', to:'rentals#history',as:'history'
+  get '/history', to:'rentals#show'
   # get '/user/map', to: 'users#map'
 end
 
