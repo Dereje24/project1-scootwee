@@ -1,4 +1,4 @@
-class Ok < ActiveRecord::Migration[5.1]
+class CreateVehicles < ActiveRecord::Migration[5.1]
   def change
     create_table :vehicles do |t|
       t.string :sn

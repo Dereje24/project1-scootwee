@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302215202) do
+ActiveRecord::Schema.define(version: 20180304230501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 20180302215202) do
     t.string "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "vehicle_id"
+    t.bigint "local_id"
+    t.string "local_drop"
+    t.string "due_date"
+    t.string "drop_date"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["local_id"], name: "index_rentals_on_local_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+    t.index ["vehicle_id"], name: "index_rentals_on_vehicle_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +70,7 @@ ActiveRecord::Schema.define(version: 20180302215202) do
     t.index ["local_id"], name: "index_vehicles_on_local_id"
   end
 
+  add_foreign_key "rentals", "locals"
+  add_foreign_key "rentals", "users"
+  add_foreign_key "rentals", "vehicles"
 end

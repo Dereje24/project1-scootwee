@@ -2,8 +2,15 @@ class UsersController < ApplicationController
 before_action only:[:show] do
   if !logged_in?
     redirect_to login_path
-  end
+end
  end
+ before_action only:[:show] do
+   if has_reserved?
+     redirect_to current_path
+ end
+  end
+
+
  before_action only:[:new] do
    if logged_in?
      redirect_to user_path
@@ -18,7 +25,7 @@ before_action only:[:show] do
   end
 
   def show
-
+@user=current
   end
 
 
@@ -61,7 +68,11 @@ before_action only:[:show] do
         ) as distance FROM locals ORDER BY distance ASC limit 15")
 @locals=[]
 @positions.each do |p|
- @vehicles=Local.find(p['id']).vehicle.all
+  @rented=Rental.where("drop_date = 'nill'").pluck(:vehicle_id)
+  if @rented == []
+  @rented=[0]
+end
+ @vehicles=Local.find(p['id']).vehicle.where('id not in (?)',@rented)
  @locals.push({position:p , vehicles:@vehicles})
 end
     render json: {status: 'SUCCESS' , data: @locals}, status: :ok
