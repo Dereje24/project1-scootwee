@@ -9,10 +9,10 @@ Rental.delete_all
 Local.delete_all
 Vehicle.delete_all
 User.delete_all
-User.create({first_name:'Abdelhalim',last_name:'khaldi',email:'halim',password:'halim'})
+User.create({first_name:'Abdelhalim',last_name:'khaldi',email:'halim',password:'halimm'})
 User.create({first_name:'terrel',last_name:'terrel',email:'terrel',password:'terrel'})
-User.create({first_name:'lisa',last_name:'lisa',email:'lisa',password:'lisa'})
-User.create({first_name:'dj',last_name:'dj',email:'dj',password:'dj'})
+User.create({first_name:'lisa',last_name:'lisa',email:'lisa',password:'lisalisa'})
+User.create({first_name:'dj',last_name:'dj',email:'dj',password:'djdjdj'})
 position=[37.78317009,-122.38788812,37.77009658,-122.43696013,
 37.78430452,-122.43240438,
 37.79272767,-122.42420559,
