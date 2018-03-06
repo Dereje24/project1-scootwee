@@ -16,5 +16,17 @@
  *= require home.scss
  *= require bootstrap-datepicker
  */
-/*
- @import "materialize";*/
+
+ p {
+  transition: all 2s;
+ }
+ .bikes{
+   display: none;
+ }
+ #reservation{
+   text-align: center;
+ }
+
+header{
+  margin-bottom:4em
+}

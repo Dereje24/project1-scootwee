@@ -1,5 +1,5 @@
-<div id='page'>
-
+<div id='page' class='contaienr col-lg-12'>
+<div class='row'>
 <h2>Hours Of Operation: 7AM - 9PM</h2>
 <br>
 
@@ -9,17 +9,17 @@
 <div class='date'>
 <input class='day' type="text" data-provide='datepicker' >
 </div>
+</div>
 
-
-
+<div class='row' style='margin-top:2em'>
 
 
 <div class= 'listandmap'>
 
-<div id='list' style="height:500px;width:400px;float:left;margin-right:50px">
+<div id='list' class='col-lg-6' >
 
 </div>
-<div id='map' style="height:500px;width:400px;float:left"></div>
+<div id='map' class='col-lg-5'></div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class='info'></div>
+        <div class='info-vl'></div>
       <%= form_with url: rental_path,id:'reservation_form' do |t| %>
       <%= t.hidden_field :local_id %>
       <%= t.hidden_field :vehicle_id %>
@@ -46,5 +46,6 @@
   </div>
 
 
+</div>
 </div>
 </div>

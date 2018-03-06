@@ -1,11 +1,11 @@
-<div class='contaner' >
-<div class='header'>
-<div class=' col-lg-5 col-md-offset-2' id='reservation'>
-<p><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:20%;height:20%' > <%= @vehicle.description %> @ <%= @local.street %> , <%= @local.city %> , <%= @local.state %> | <%= @local.zip_code %> Show this acces code</p>
-<p><strong><img src=" https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<%=@vehicle.sn%>"></strong></p>
-<p><button class="btn btn-primary" id='drop'>Drop </button> </p>
+
+<div class='contaner'>
+<div class=' col-lg-3 col-md-offset-2' id='reservation'>
+<p><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:60%' ><br> <%= @vehicle.description %> @ <%= @local.street %> , <%= @local.city %> , <%= @local.state %> | <%= @local.zip_code %> Show this acces code</p>
+<p><strong><img src=" https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<%=@vehicle.sn%>"></strong><button class="btn btn-primary btn-lg" id='drop' style="margin-left:2em">Drop </button> </p>
+<p></p>
 </div>
-<div class=' col-lg-5' id='user#map' style='height:60vh'>
+<div class=' col-lg-5 col-md-offset-1' id='user#map' style='height:60vh'>
 <input type='hidden' name='local_lng' value=<%=@local.lng %> >
   <input type='hidden' name='local_lat' value=<%=@local.lat %> >
 </div>
@@ -19,16 +19,17 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class='info'></div>
+
       <%= form_with url: drop_path,model:@rental,id:'drop_form', class:'form col-lg-12' do |t|%>
-<%= t.select (:local_id ),class: 'form-control' do%>
+<div class='form-group'>
+<%= t.select :local_id  do%>
   <% @locals.each do |l| %>
   <%= content_tag(:option ,l.name,value: l.id) %>
   <% end %>
   <% end %>
       <%= t.hidden_field :rental_id, :value => @current_rental[0].id %>
       <%= t.hidden_field :vehicle_id, :value => @vehicle.id %>
-
+</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id='dropit' >Confirm</button>
