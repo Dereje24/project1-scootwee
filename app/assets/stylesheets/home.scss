@@ -21,6 +21,7 @@ ul li, ol li{
 
 ul li i{
 	vertical-align: middle;
+	color: #f9bb1a;
 }
 ul.pricing-list li span{
 	font-family: 'Roboto', sans-serif;
@@ -30,6 +31,14 @@ ul.pricing-list li span{
 	margin-top:30px;
 	margin-bottom: 20px;
 }
+.navbar-default .navbar-nav>li>a{
+	color: black;
+	font-size: 18px;
+}
+#logo{
+	color: black;
+	font-size: 40px;
+}
 p {
 	font-size: 15px;
 	line-height: 24px;
@@ -37,15 +46,19 @@ p {
 	color: #7c8595;
 	margin-bottom:15px;
 }
+h2.section-title.grey{
+	color: black;
+}
+p.section-subtitle.grey{
+	color: #bbb;
+}
 .home-section {
 	background: url('http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/landmark-images/golden-gate_web.jpg');
-  	// background: -webkit-linear-gradient(left top, #008aff, #1ad2fd); /* For Safari 5.1 to 6.0 */
-  	// background: -o-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Opera 11.1 to 12.0 */
-  	// background: -moz-linear-gradient(bottom right, #008aff, #1ad2fd); /* For Firefox 3.6 to 15 */
-  	// background: linear-gradient(to bottom right, #008aff, #1ad2fd); /* Standard syntax */
   	padding: 145px 0 125px 0;
 }
-
+.navbar{
+	background-color: #f9bb1a;
+}
 .home-section h1{
 	font-size: 36px;
 	line-height: 44px;
@@ -217,6 +230,47 @@ p {
 	height: 500px;
 	width: 350px;	
 }
+.section-dark{
+	background-color:#f9bb1a;
+	padding:70px 0;
+}
+.white-input{
+	color: black;
+}
+
+
+.footer {
+	z-index:900;
+	background-color: #2f3539;
+    border-top: 1px solid #393f43;
+	padding: 50px 0;
+	font-weight: 300;
+	margin-top: 20%
+}
+
+.footer p {
+	font-size: 16px;
+	color: #cecece;
+}
+
+.footer p a {
+	font-size: 16px;
+	color: #f9bb1a;
+	text-decoration:underline;
+}
+
+ul.footer_social{
+	width:100%;
+	max-width:1140px;
+	display:block;
+	margin:0 auto;
+	padding-top:5px;
+	text-align:center;
+}
+.footer_social li{
+	display: inline-block;
+	padding: 20px;
+}
 
 #contact-form{
 	margin:0 auto;
@@ -254,7 +308,7 @@ input.contact-input{
     padding-left:2%;
     padding-right:2%;
 	margin-bottom:20px;
-	color: #aaa;
+	color: black;
 	border: 1px solid #757575;
 	background-color: transparent;
     font-size:14px;

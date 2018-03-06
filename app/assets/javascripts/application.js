@@ -16,6 +16,8 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require bootstrap-datepicker
+//= require materialize
+
 var directionsService = new google.maps.DirectionsService
 var directionsDisplay = new google.maps.DirectionsRenderer
 var icon = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/micons/blue.png",
@@ -209,13 +211,15 @@ $('#dropit').on('click',function(){
 
         data.data.forEach(function(el,index){
           $('table').append(`<tr> <td>${el.vehicle.description}</td><td>${el.local_start.street} ${el.local_start.city}
-${el.local_start.state} ${el.local_start.zip_code}</td><td>${el.local_end.street} ${el.local_end.city}
-${el.local_end.state} ${el.local_end.zip_code}</td><td>${el.rental.created_at}</td><td>${el.rental.drop_date}</td><td><a class='map_show' data-id=${index}>Show</a></td></tr>`)
+                              ${el.local_start.state} ${el.local_start.zip_code}</td><td>${el.local_end.street} ${el.local_end.city}
+                              ${el.local_end.state} 
+                              ${el.local_end.zip_code}</td><td>${el.rental.created_at}</td><td>
+                              ${el.rental.drop_date}</td><td><a class='map_show' data-id=${index}>Show</a></td></tr>`)
         });
         $('.map_show').on('click',function(){
           var i=$(this).attr('data-id')
           $('.new').remove();
-          $(this).closest('tr').after(`<tr class="new"><td colspan="6"><div class='col-lg-6'><p>${data.data[i].vehicle.description} <br>Pickked in ${data.data[i].local_start.street} ${data.data[i].local_start.city} ${data.data[i].local_start.state} ${data.data[i].local_start.zip_code}<br>Dropped in:${data.data[i].local_end.street} ${data.data[i].local_end.city} ${data.data[i].local_end.state}  ${data.data[i].local_start.zip_code} </p></div><div class='col-lg-6' id='history_map' style='height:200px'></div> </td></tr>`);
+          $(this).closest('tr').after("<tr class="new"><td colspan="6"><div class='col-lg-6'><p>${data.data[i].vehicle.description} <br>Pickked in ${data.data[i].local_start.street} ${data.data[i].local_start.city} ${data.data[i].local_start.state} ${data.data[i].local_start.zip_code}<br>Dropped in:${data.data[i].local_end.street} ${data.data[i].local_end.city} ${data.data[i].local_end.state}  ${data.data[i].local_start.zip_code} </p></div><div class='col-lg-6' id='history_map' style='height:200px'></div> </td></tr>");
           var position={lat: parseFloat(data.data[i].local_start.lat),lng: parseFloat(data.data[i].local_start.lng)}
 var destination={lat: parseFloat(data.data[i].local_end.lat),lng: parseFloat(data.data[i].local_end.lng)}
           map=new google.maps.Map(document.getElementById('history_map'),{
@@ -288,7 +292,7 @@ var slideIndex = 0;
       setTimeout(function() {slideShow(el)}, 5000);
   };
 
-
+ $('.carousel.carousel-slider').carousel({fullWidth: true});
 
 
 });

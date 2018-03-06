@@ -16,20 +16,5 @@
  *= require home.scss
  *= require bootstrap-datepicker
  */
- import 'owl.carousel/dist/assets/owl.carousel.css';
-
- p {
-  transition: all 2s;
- }
- .bikes{
-   display: none;
- }
- #reservation{
-   text-align: center;
- }
- table, tr ,td ,th{
-   border: 0.1em solid black;
- }
-header{
-  margin-bottom:4em
-}
+/*
+ @import "materialize";*/
