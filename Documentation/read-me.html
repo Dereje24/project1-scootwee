@@ -32,11 +32,13 @@
 		<div id="doc-menu">
 			<ul class="nav">
 				<li class="section active"><span>1</span><a href="#s1">Introduction</a></li>
-				<li class="section"><span>2</span><a href="#s2">HTML Structure</a></li>
-				<li class="section"><span>3</span><a href="#s3">CSS Structure</a></li>
-				<li class="section"><span>4</span><a href="#s4">JavaScripts/Gems</a></li>
-				<li class="section"><span>5</span><a href="#s5">Versioning/Features</a></li>
-				<li class="section"><span>6</span><a href="#s6">Legal Notices</a></li>
+				<li class="section"><span>2</span><a href="#s2">Product Dev Cycle</a></li>
+				<li class="section"><span>3</span><a href="#s3">HTML Structure</a></li>
+				<li class="section"><span>4</span><a href="#s4">CSS Structure</a></li>
+				<li class="section"><span>5</span><a href="#s5">JavaScripts/Gems</a></li>
+				<li class="section"><span>6</span><a href="#s6">Team Members</a></li>
+				<li class="section"><span>7</span><a href="#s7">Versioning/Features</a></li>
+                <li class="section"><span>8</span><a href="#s8">Legal Notices</a></li>
 			</ul>
 		</div>
 
@@ -46,6 +48,7 @@
 			<div id="intro">
 				<div class="vertical">
 					<h1><strong>ScootWee - Documentation</strong></h1>
+        <img src="assets/ScootWee.jpg" alt="ScootersReady" width="500" height="377">
 				</div>
 			</div>
 
@@ -54,337 +57,119 @@
 <!-- ===================================================================================-->
 
 			<h1 id="s1"><span>1</span>Introduction</h1>
+			<p>Technologies Used: Ruby,Rails framework, HTML, CSS, Javascript, Bootstrap, PHP, Google Maps API, AWS hosted EC2, RDS
+			Application Goals: Utilizing Google Maps API, Authentication and Authenticate, Paypal, AWS.  Stretches: SMS</p>
+			<p>ScooterWee Site and Documentation files adapted for use, <br>under license by Bogdan Preda</p>
 
-			<p>ScooterWee Site and Documentation file adapted for use, <br>under license by Bogdan Preda</p>
+<!-- ===================================================================================-->
+<!-- 2 Product Development Cycle -->
+<!-- ===================================================================================-->
+			<h1 id="s2"><span>2</span>Product Dev Cycle</h1>
+		<p>After review of the requirements for this project it was agreed upon collectively that we would come up with an Application
+			that was something that we would use, or was needed.  We wanted to create a product that could be viable to be
+			built out longer term.  There are bike rental Ford and Jump(Uber owned)companies, motorized scooter companies, Lyft, Uber, but there are
+			no Scooter companies, Kick Scooters that is!  And ScootWee was born!  A kickscooter rental service for the urban jungle!</p>
+		<p>So, we began our Psuedo coding, laying out our steps, db, we would take to meet MVP for approval by the powers (Justin).</p>
+		<p>A kickscooter rental service for the City at high density areas of mass transit for those who are not comfortable with the bike
+			lanes and traffic and can be safe on sidewalks! A simple $5 a day fee, log in, see where there are scooters near you, reserve,
+			pay and pick it up!  Goals to work with major companies like Razor, Micro, Xooter.  And try to work with Ford in a joint share of space.</p>
+				<h2>Wire Frames</h2>
+				<img src="ProjectDocs/ScootWeeFullWireFrame.jpg" alt="WireFrame" width="450" height="300">
+				<h2>ERD</h2>
+				<img src="ProjectDocs/ScootWee_ERD.jpg" alt="ERD" width="600" height="300">
+
+
 
 <!-- ===================================================================================-->
 <!-- 2 HTML Structure-->
 <!-- ===================================================================================-->
 
-			<h1 id="s2"><span>2</span>HTML Structure</h1>
+			<h1 id="s3"><span>3</span>HTML Structure</h1>
 
-			<p><b>Header Section</b><br>Logo and navigation are located in the upper zone, within the "header" section.</p>
+			<p>Adapted existing html to work with our required Ruby integration of forms, maps, calendar, for home page, dashboard, and
+				additional pages.</p>
 
-<!-- Code ==============================================================================-->
-<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
 
-<!--begin header -->
-    <header class="header">
+<!-- ===================================================================================-->
+<!-- 3 CSS Structure-->
+<!-- ===================================================================================-->
+        <h1 id="s4"><span>4</span>CSS Structure</h1>
+            <p>We adapted this template which includes 5 css files. Utilizing the information learned in class (poem)on Tuesday in
+							how to set up CSS to move objects in Ruby.  Here is a list of the stylesheet files:</p>
 
-        <!--begin nav -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-
-            <!--begin container -->
-            <div class="container">
-
-                <!--begin navbar -->
-                <div class="navbar-header">
-
-                    <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!--logo -->
-                    <a href="index.html" class="navbar-brand" id="logo">ScooterWee</a>
-
-                </div>
-
-                <div id="navbar-collapse-02" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#home_wrapper">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#discover" class="discover-btn">Check it out!</a></li>
-
-                    </ul>
-                </div>
-                <!--end navbar -->
-
-            </div>
-            <!--end container -->
-
-        </nav>
-        <!--end nav -->
-
-    </header>
-    <!--end header -->
-
-]]></script>
-<!--====================================================================================-->
-
-			<p><b>Footer Section</b></p>
+      <ul>
+                <li><b>bootstrap.css</b>  - standard bootstrap css styles.</li>
+                <li><b>style.css</b>  - common css styles for this template.</li>
+                <li><b>style-magnific-popup</b> - contain css styles for the lightbox gallery.</li>
+                <li><b>animate.css</b>- a cross-browser library of CSS animations</li>
+                <li><b>fonts.css</b> - base styles for the Fontastic icon fonts.</li>
+            </ul>
 
 <!-- Code ==============================================================================-->
-<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+        <script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+        <!-- Loading Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet">
 
-<!--begin footer -->
-<div class="footer">
+        <!-- Loading Template CSS -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style-magnific-popup.css" rel="stylesheet">
 
-        <!--begin container -->
-        <div class="container">
+        <!-- Font Awesome -->
+        <link href="css/fonts.css" rel="stylesheet">
+        ]]></script>
 
-            <!--begin row -->
-            <div class="row">
 
-                <!--begin col-md-12 -->
-                <div class="col-md-12 text-center">
-
-                    <!--begin copyright -->
-                    <div class="copyright">
-                        <p>Site Theme adapted by ScootWee, under use license from Copyright © 2017 Focus. Designed by Bogdan Preda</p>
-
-                    </div>
-                    <!--end copyright -->
-
-                    <!--begin footer_social -->
-                    <ul class="footer_social">
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-pinterest"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-skype"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-dribble"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!--end footer_social -->
-
-                </div>
-                <!--end col-md-6 -->
-
-            </div>
-            <!--end row -->
-
-        </div>
-        <!--end container -->
-
-    </div>
-<!--end footer -->
-
-]]></script>
 <!--====================================================================================-->
+            <p>Fonts Used</p>
 
-			<p><b>Newsletter and contact forms.</b><br>Below you can see how the code for the newsletter, register and contact forms sections looks inside the <i>index.html</i> file:</p>
+            <script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+            <!-- Google Fonts -->
+
+            // <link href=“https://fonts.googleapis.com/css?family=Courgette” rel=“stylesheet”>
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+            ]]></script>
 
 <!-- Code ==============================================================================-->
-<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+            <script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+            html {
+                font-family: ‘Courgette’, cursive;
+            }
+            ]]></script>
 
-<!--begin newsletter_form_wrapper -->
-<section class="section-gradient">
-
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col md 12 -->
-            <div class="col-md-12 text-center">
-
-                <!--begin newsletter-form -->
-                <h3 class="newsletter-title">Seen enough? We are currently in the closed beta.<br>
-                Please enter your email to join the waiting list.</h3>
-
-            </div>
-            <!--end col md 12 -->
-
-            <!--begin col md 6-->
-            <div class="col-md-6 col-md-offset-3 newsletter_box">
-
-                <!--begin success_box -->
-                <p class="newsletter_success_box" style="display:none;">We received your message and you will hear from us soon. Thank You!</p>
-                <!--end success_box -->
-
-                <form id="newsletter-form" class="newsletter_form" action="php/newsletter.php" method="post">
-                    <input type="email" name="nf_email" placeholder="Enter Your Email.." class="newsletter-input">
-                    <input type="submit" value="SUBSCRIBE" class="btn-newsletter">
-                </form>
-                <!--end newsletter-form -->
-
-            </div>
-            <!--end col md 8 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end newsletter_form_wrapper -->
-
-]]></script>
 <!--====================================================================================-->
 
-<!-- Code ==============================================================================-->
-<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
+			<p><b>Newsletter and contact forms.</b>
 
-<!--begin contact -->
-    <section class="section-dark" id="contact">
-
-        <!--begin container-->
-        <div class="container">
-
-            <!--begin row-->
-            <div class="row">
-
-                <!--begin col md 10 -->
-                <div class="col-md-10 col-md-offset-1 text-center margin-bottom-30">
-
-                    <h2 class="section-title grey">Get In Touch</h2>
-
-                    <p class="section-subtitle grey">Happy to help in any way!</p>
-
-                </div>
-            <!--end col md 10 -->
-
-        </div>
-            <!--end row-->
-
-            <!--begin row-->
-        <div class="row margin-20">
-
-                <!--begin success message -->
-                <p class="contact_success_box" style="display:none;">We received your message and you will hear from us soon. Thank You!</p>
-                <!--end success message -->
-
-                <!--begin contact form -->
-                <form id="contact-form" class="contact" action="php/contact.php" method="post">
-
-                    <!--begin col-md-6-->
-                    <div class="col-md-6">
-                        <input class="contact-input white-input" required="" name="contact_names" placeholder="Full Name*" type="text">
-                        <input class="contact-input white-input" required="" name="contact_email" placeholder="Email Adress*" type="email">
-                        <input class="contact-input white-input" required="" name="contact_phone" placeholder="Phone Number*" type="text">
-                    </div>
-                    <!--end col-md-6-->
-
-                    <!--begin col-md-6-->
-                    <div class="col-md-6">
-                        <textarea class="contact-commnent white-input" rows="2" cols="20" name="contact_message" placeholder="Your Message..."></textarea>
-                    </div>
-                    <!--end col-md-6-->
-
-                    <!--begin col-md-12-->
-                    <div class="col-md-12">
-                        <input value="Send Message" id="submit-button" class="contact-submit" type="submit">
-                    </div>
-                    <!--end col-md-12-->
-
-                </form>
-                <!--end contact form -->
-
-            </div>
-            <!--end row-->
-
-      </div>
-      <!--end container-->
-
-    </section>
-    <!--end contact-->
-
-]]></script>
-<!--====================================================================================-->
-
-<p>This template includes as well 3 PHP files, called <b>newsletter.php</b>, <b>register.php</b> and <b>contact.php</b>. For your newsletter, register and contact forms to function correctly youʼll have to open the newsletter.php, register.php and contact.php files and enter in your email address in the following location:</p>
+            <p>This template includes as well 3 PHP files, called <b>newsletter.php</b>, <b>register.php</b> and <b>contact.php</b>.
+							For your newsletter, register and contact forms to function correctly youʼll have to open the newsletter.php, register.php and contact.php
+							files and enter in your email address in the following location:</p>
 
 <!-- Code ==============================================================================-->
 <script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
 $to ='to@email.com';
 ]]></script>
-<!-- ===================================================================================-->
-<!-- 3 CSS Structure-->
-<!-- ===================================================================================-->
-		<h1 id="s3"><span>3</span>CSS Structure</h1>
-			<p>This template includes 5 css files. Here is a list of the stylesheet files:</p>
-
-      <ul>
-            	<li><b>bootstrap.css</b>  - standard bootstrap css styles.</li>
-				<li><b>style.css</b>  - common css styles for this template.</li>
-                <li><b>style-magnific-popup</b> - contain css styles for the lightbox gallery.</li>
-                <li><b>animate.css</b>- a cross-browser library of CSS animations</li>
-                <li><b>fonts.css</b> - base styles for the Fontastic icon fonts.</li>
-			</ul>
 
 <!-- Code ==============================================================================-->
-		<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
-		<!-- Loading Bootstrap -->
-		<link href="css/bootstrap.css" rel="stylesheet">
 
-		<!-- Loading Template CSS -->
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="css/style-magnific-popup.css" rel="stylesheet">
-
-		<!-- Font Awesome -->
-		<link href="css/fonts.css" rel="stylesheet">
-		]]></script>
-
-
-<!--====================================================================================-->
-			<p>Fonts Used</p>
-
-			<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
-			<!-- Google Fonts -->
-
-			<link href=“https://fonts.googleapis.com/css?family=Courgette” rel=“stylesheet”>
-			<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
-			]]></script>
-
-			<!-- Code ==============================================================================-->
-			<script type="syntaxhighlighter" class="brush: php; html-script: true"><![CDATA[
-			html {
-				font-family: ‘Courgette’, cursive;
-			}
-			]]></script>
 <!-- ===================================================================================-->
-<!-- 4 JavaScripts and Gems-->
+<!-- 5 JavaScripts and Gems-->
 <!-- ===================================================================================-->
-		<h1 id="s4"><span>4</span>JavaScripts and Gems Used in Application</h1>
-			<p>This template imports Javascript files. jQuery is a Javascript library that greatly reduces the amount of <br>
+		<h1 id="s5"><span>5</span>JavaScripts and Gems Used in Application</h1>
+			<p>This template imports Javascript files. jQuery is a Javascript library that greatly reduces the amount of
 			code that you must write. All the Javascript files can be found inside the js folder.</p>
-			<p>Gems utilized in the making of this application:</p>
-					<ul>
+			<p>Gems utilized in the making of this application:</p><ul>
 							<li>Bcrypt</li>
 							<li>GeoLocation</li>
-							<li>something</li>
+							<li>Hasavena Algorithm adapted for Maps</li>
 							<li>something else</li>
 					</ul>
 
 <!-- ===================================================================================-->
-<!-- 5 Additional Info - Team Creators
+<!-- 6 Additional Info - Team Creators
  -->
 <!-- ===================================================================================-->
-		<h1><underline>ScooterWee Dev Team</underline></h1>
+		<h1 id="s6"><span>6</span>ScootWee Dev Team</h1>
 			<ul>
 				<li>DJ</li>
 				<li>Abdehalim</li>
@@ -393,22 +178,22 @@ $to ='to@email.com';
 			</ul>
 
 <!-- ===================================================================================-->
-<!-- 6 Versioning - Change Log -->
+<!-- 7 Versioning - Change Log -->
 <!-- ===================================================================================-->
 <div>
-			<h1 id="s6"><span>6</span>Versioning and Features</h1>
+			<h1 id="s7"><span>7</span>Versioning and Features</h1>
       <ul>
-				<li><b>Version 1.0</b> - Initial software release</li>
-				<li><b>Future Features</li>
-						<li>something</li>
-						<li>something else</li>
+				<li><b>Version 1.0</b> - Initial software release 3/5/2018</li>
+				<li><b>Future Features:</li>
+						<li>SMS Notifications</li>
+						<li>Other Cities</li>
 			</ul>
 </div>
 <!-- ===================================================================================-->
-<!-- 7 Legal - Terms & Conditions for Use -->
+<!-- 8 Legal - Terms & Conditions for Use -->
 <!-- ===================================================================================-->
 			<div>
-						<h1 id="s6"><span>6</span>Legal and T&C</h1>
+						<h1 id="s8"><span>8</span>Legal and T&C</h1>
 			      <ul>
 							<li>Terms and Conditions</li>
 							<li>Waiver and Release of Liability</li>
