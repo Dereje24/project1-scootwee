@@ -1,5 +1,10 @@
 
 <div class='contaner'>
+  <% if flash[:error_current] %>
+  <div class='alert alert-danger'>
+    <p><%=flash[:error_current] %></p>
+  </div>
+  <% end %>
 <div class=' col-lg-3 col-md-offset-2' id='reservation'>
 <p><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:60%' ><br> <%= @vehicle.description %> @ <%= @local.street %> , <%= @local.city %> , <%= @local.state %> | <%= @local.zip_code %> Show this acces code</p>
 <p><strong><img src=" https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=<%=@vehicle.sn%>"></strong><button class="btn btn-primary btn-lg" id='drop' style="margin-left:2em">Drop </button> </p>

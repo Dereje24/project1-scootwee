@@ -1,4 +1,4 @@
-  
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -247,12 +247,16 @@ $(document).on('turbolinks:load', function () {
   }
   if (map_id) {
     map();
+    $('#user_nav').addClass('active')
+
   }
   if (user_map) {
     reservation_map();
+    $('#user_nav').addClass('active')
   }
   if (show_history) {
     history();
+    $('#history_nav').addClass('active')
   }
 
   var slideIndex = 0;

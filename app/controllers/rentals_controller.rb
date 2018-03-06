@@ -19,9 +19,10 @@ redirect_to current_path
 end
 end
 def current
+  @user=User.find(session[:user_id])
   @rental=Rental.new
   @locals=Local.all
-  @current_rental=User.find(session[:user_id]).rental.where("drop_date = 'nill'")
+  @current_rental=@user.rental.where("drop_date = 'nill'")
   @vehicle=@current_rental[0].vehicle
   @local=@current_rental[0].local
 end
@@ -45,10 +46,13 @@ if @rental.vehicle.update(local_id:params_drop[:local_id])
     @rental.update(local_drop:params_drop[:local_id])
   redirect_to user_path
 else
+  flash[:error_current]='error try again'
   redirect_to current_path
 end
 else
-flash[:error]='pick another location this one is full'
+flash[:error_current]='pick another location this one is full'
+redirect_to current_path
+
 end
 end
 
@@ -66,6 +70,9 @@ def reserved?
     else
     @rental
   end
+end
+def history
+@user=User.find(session[:user_id])
 end
 
 
