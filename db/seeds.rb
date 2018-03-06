@@ -5,9 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Rental.delete_all
 Local.delete_all
 Vehicle.delete_all
+User.delete_all
+User.create({first_name:'Abdelhalim',last_name:'khaldi',email:'halim',password:'halim'})
+User.create({first_name:'terrel',last_name:'terrel',email:'terrel',password:'terrel'})
+User.create({first_name:'lisa',last_name:'lisa',email:'lisa',password:'lisa'})
+User.create({first_name:'dj',last_name:'dj',email:'dj',password:'dj'})
 position=[37.78317009,-122.38788812,37.77009658,-122.43696013,
 37.78430452,-122.43240438,
 37.79272767,-122.42420559,
