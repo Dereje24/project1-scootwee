@@ -143,16 +143,16 @@ $('#dropit').on('click',function(){
               id:index
             })
             markers.push(marker)
-            list.append(`<div id='bike_list${index}' class='locals alert alert-info'><p>name: ${el.position.name} Adress: ${el.position.street} ${el.position.city} ${el.position.state} ${el.position.zip_code} distance:${Math.round(el.position.distance)} miles <button class='btn btn-sm btn-info'><a class='display_road' data-id=${index}>show</a></button> <button class='btn btn-secondary btn-sm'><a class='reserve' data-id=${index}>Reserve</a></button></p></div>`)
-            bikes=$(`#bike_list${index}`)
+            list.append("<div id='bike_list"+index+"' class='locals alert alert-info'><p>name: +"el.position.name"+ Adress: +"el.position.street"+ +"el.position.city"+ +"el.position.state"+ +"el.position.zip_code"+ distance: +"Math.round(el.position.distance)"+ miles <button class='btn btn-sm btn-info'><a class='display_road' data-id='+"index"+'>show</a></button> <button class='btn btn-secondary btn-sm'><a class='reserve' data-id='+"index"+'>Reserve</a></button></p></div>")
+            bikes=$("#bike_list"+index)
             el.vehicles.forEach(function(vl){
-              bikes.append(`<p class='bikes alert alert-success'><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:100px;height:100px' > ${vl.description} rent it today for 5$ <button class='btn btn-sm btn-warning' > <a a class='rent' data-id=${el.position.id}#${vl.id}>Pick!</a> </button></p>`)
+              bikes.append("<p class='bikes alert alert-success'><img src='https://thescooterfarm.com/wp-content/uploads/2017/07/Chilli-Pro-Scooter-Reaper-Wave1.jpg' style='width:100px;height:100px' > +"vl.description"+ rent it today for 5$ <button class='btn btn-sm btn-warning' > <a a class='rent' data-id='"+el.position.id+"#"+vl.id+"'>Pick!</a> </button></p>")
             });
             marker.addListener('click', function() {
               var i=this.id
               console.log(i)
               $('.bikes').hide(300)
-              $(`#bike_list${i} .bikes`).show(300)
+              $("#bike_list+"i"+ .bikes").show(300)
             });
             });
           $('a.display_road').on('click',function(e){
@@ -176,7 +176,7 @@ $('#dropit').on('click',function(){
         $('a.reserve').on('click',function(e){
           var i=$(this).attr('data-id')
           $('.bikes').hide(300)
-          $(`#bike_list${i} .bikes`).show(300)
+          $("bike_list+"i"+ .bikes").show(300)
 
         });
         $('a.rent').on('click',function(e){
@@ -185,8 +185,8 @@ $('#dropit').on('click',function(){
           var text
           $('.info-vl').append($(this).parent().parent().clone())
           $('.info-vl .btn').remove()
-          $('input[name="local_id"]').val(`${i[0]}`)
-          $('input[name="vehicle_id"]').val(`${i[1]}`)
+          $('input[name="local_id"]').val(i[0])
+          $('input[name="vehicle_id"]').val(i[1])
           $('#myModal').modal('show')
 
         });
@@ -210,14 +210,14 @@ $('#dropit').on('click',function(){
         console.log(data)
 
         data.data.forEach(function(el,index){
-          $('table').append(`<tr class='danger'> <td>${el.vehicle.description}</td><td>${el.local_start.street} ${el.local_start.city}
-${el.local_start.state} ${el.local_start.zip_code}</td><td>${el.local_end.street} ${el.local_end.city}
-${el.local_end.state} ${el.local_end.zip_code}</td><td>${el.rental.created_at}</td><td>${el.rental.drop_date}</td><td><a class='map_show' data-id=${index}>Show</a></td></tr>`)
+          $('table').append("<tr class='danger'> <td>"+el.vehicle.description+"</td><td>"+el.local_start.street+el.local_start.city+"
+"+el.local_start.state+el.local_start.zip_code"</td><td>"+el.local_end.street+el.local_end.city+el.local_end.state+el.local_end.zip_code"
+</td><td>"+el.rental.created_at+"</td><td>"+el.rental.drop_date+"</td><td><a class='map_show' data-id="index">Show</a></td></tr>")
         });
         $('.map_show').on('click',function(){
           var i=$(this).attr('data-id')
           $('.new').remove();
-          $(this).closest('tr').after(`<tr class="new warning"><td colspan="6"><div class='col-lg-6'><p>${data.data[i].vehicle.description} <br>Pickked in ${data.data[i].local_start.street} ${data.data[i].local_start.city} ${data.data[i].local_start.state} ${data.data[i].local_start.zip_code}<br>Dropped in:${data.data[i].local_end.street} ${data.data[i].local_end.city} ${data.data[i].local_end.state}  ${data.data[i].local_start.zip_code} </p></div><div class='col-lg-6' id='history_map' style='height:200px'></div> </td></tr>`);
+          $(this).closest('tr').after("<tr class='new warning'><td colspan='6'><div class='col-lg-6'><p>"+data.data[i].vehicle.description+" <br>Pickked in "+data.data[i].local_start.street+data.data[i].local_start.city+data.data[i].local_start.state+data.data[i].local_start.zip_code"   <br>Dropped in:"+ data.data[i].local_end.street+""+data.data[i].local_end.city+""+data.data[i].local_end.state+""+data.data[i].local_start.zip_code+"</p></div><div class='col-lg-6' id='history_map' style='height:200px'></div> </td></tr>");
           var position={lat: parseFloat(data.data[i].local_start.lat),lng: parseFloat(data.data[i].local_start.lng)}
 var destination={lat: parseFloat(data.data[i].local_end.lat),lng: parseFloat(data.data[i].local_end.lng)}
           map=new google.maps.Map(document.getElementById('history_map'),{
