@@ -14,10 +14,19 @@
  *= require_self
  *= require bootstrap.min
  *= require home.scss
+ *= require bootstrap-datepicker
  */
+
  p {
   transition: all 2s;
  }
  .bikes{
    display: none;
  }
+ #reservation{
+   text-align: center;
+ }
+
+header{
+  margin-bottom:4em
+}

@@ -14,13 +14,13 @@ class SessionController < ApplicationController
       login(@user,params_login[:lat],params_login[:lng])
       redirect_to user_path
     else
-      flash[:error]="Wrong Combination of Username and Password"
+      flash[:login_error]="Wrong Combination of Username and Password"
       redirect_to login_path
     end
   end
   def destroy
     reset_session
-      @current_user = nil
+    current=nil
     redirect_to login_path
   end
   private def params_login

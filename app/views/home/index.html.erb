@@ -41,51 +41,7 @@
 
 <body>
 
-    <!--begin header -->
-    <header class="header">
 
-        <!--begin nav -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-
-            <!--begin container -->
-            <div class="container">
-
-                <!--begin navbar -->
-                <div class="navbar-header">
-
-                    <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!--logo -->
-                    <a href="index.html" class="navbar-brand" id="logo">ScootWee</a>
-
-                </div>
-
-                <div id="navbar-collapse-02" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#home_wrapper">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-
-                    </ul>
-                </div>
-                <!--end navbar -->
-
-            </div>
-    		<!--end container -->
-
-        </nav>
-    	<!--end nav -->
-
-    </header>
     <!--end header -->
 
     <!--begin home section -->
@@ -109,8 +65,8 @@
 					$5/day to ScootWee!
 					</p>
 
-	        		<a href="#" class="btn-white"><i class="fa fa-user-plus fa-2x"></i>SIGN UP</a>
-	        		<a href="#" class="btn-white"><i class="fa fa-sign-in fa-2x"></i>SIGN IN</a>
+	        		<a href="/sign_up" class="btn-white"><i class="fa fa-user-plus fa-2x"></i>SIGN UP</a>
+	        		<a href="/login" class="btn-white"><i class="fa fa-sign-in fa-2x"></i>SIGN IN</a>
 
 
 	          	</div>
@@ -148,7 +104,7 @@
                 <!--begin col-sm-12-->
                 <div class="col-sm-12 sponsors">
 
-                    <%= video_tag(["KickScooterCommutersWSJ.mp4"], :size => "800x500", :autoplay => true, :controls => true) %>
+                    <%= video_tag(["KickScooterCommutersWSJ.mp4"], :size => "800x500", :autoplay => false, :controls => true) %>
                 </div>
                 <!--end col-sm-12-->
 
@@ -265,10 +221,10 @@
 
 	      	</div>
 	      	<!--end row -->
-			
+
 					<div class="mid-sign-up">
-						<a href="#" class="btn-white mid-icon"><i class="fa fa-user-plus fa-2x"></i>SIGN UP</a>
-				        <a href="#" class="btn-white mid-icon"><i class="fa fa-sign-in fa-2x"></i>SIGN IN</a>
+						<a href="/sign_up" class="btn-white mid-icon"><i class="fa fa-user-plus fa-2x"></i>SIGN UP</a>
+				        <a href="/login" class="btn-white mid-icon"><i class="fa fa-sign-in fa-2x"></i>SIGN IN</a>
 					</div>
 
 	    </div>
@@ -381,7 +337,7 @@
 
 <!-- 		        <img src="http://placehold.it/400x410" alt="team-1" class="width-100"> -->
 		        		<%= image_tag "Dereje.jpg", height: "334.69", width: "262.5" %>
-		        		
+
 		        		<div class="team-text">
 
 		        			<h5>Dereje Dilnesaw<br><span class="text-blue">Chief WWOOW Officer</span></h5>
@@ -448,30 +404,30 @@
 				<div class="gallery-item-wrapper padding-top-30">
 
 					<!--begin owl carousel -->
-					<div id="owl2" class="owl-carousel owl-theme">
+					<div id="owl2" class="owl-carousel owl-theme gallery">
 
-						<div>
-							<img src="images/showcase1.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter1-350x500.png"%>
 						</div>
 
-						<div>
-							<img src="images/showcase2.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter2-350x500.png"%>
 						</div>
 
-						<div>
-							<img src="images/showcase3.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter3-350x500.png"%>
 						</div>
 
-						<div>
-							<img src="images/showcase4.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter4-350x500.png"%>
 						</div>
 
-						<div>
-							<img src="images/showcase5.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter5-350x500.png"%>
 						</div>
 
-						<div>
-							<img src="images/showcase6.jpg" alt="showcase" class="gallery-show">
+						<div class="slides">
+							<%= image_tag "Scooter6-350x600.png"%>
 						</div>
 
 					</div>
@@ -533,11 +489,11 @@
 						<ul class="pricing-list">
 
 							<li><p class="price-title">STANDARD</p></li>
-							<li><span>$12</span></li>
-							<li><p class="price-subtitle">6 Months</p></li>
+							<li><span>$5</span></li>
+							<li><p class="price-subtitle">Daily Rental</p></li>
 							<li><a href="#" class="price-tag">GET STARTED</a></li>
-							<li><p class="price-text">50 Gb Bandwidth</p></li>
-							<li><p class="price-text">10 Themes</p></li>
+							<li><p class="price-text">Have 5 daily rentals</p></li>
+							<li><p class="price-text">Get 1 day free</p></li>
 						</ul>
 					</div>
 				</div>
@@ -550,12 +506,11 @@
 
 						<ul class="pricing-list">
 
-							<li><p class="price-title">SILVER</p></li>
-							<li><span>$20</span></li>
-							<li><p class="price-subtitle">12 Months</p></li>
+							<li><p class="price-title">ROLLER</p></li>
+							<li><span>$19</span></li>
+							<li><p class="price-subtitle">Monthly</p></li>
 							<li><a href="#" class="price-tag">GET STARTED</a></li>
-							<li><p class="price-text">200 Gb Bandwidth</p></li>
-							<li><p class="price-text">Unlimited Experiences</p></li>
+							<li><p class="price-text">6 buddy passes annually</p></li>
 						</ul>
 					</div>
 				</div>
@@ -568,12 +523,11 @@
 
 						<ul class="pricing-list">
 
-							<li><p class="price-title white-text">GOLD</p></li>
+							<li><p class="price-title white-text">ROCKSTAR</p></li>
 							<li><span class="white-text">$99</span></li>
-							<li><p class="price-subtitle white-text">Unlimited</p></li>
+							<li><p class="price-subtitle white-text">Annually</p></li>
 							<li><a href="#" class="price-tag">GET STARTED</a></li>
-							<li><p class="price-text white-text">Unlimited Bandwidth</p></li>
-							<li><p class="price-text white-text">All Experiences</p></li>
+							<li><p class="price-text white-text">Weekends Additional</p></li>
 						</ul>
 					</div>
 				</div>
